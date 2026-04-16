@@ -1,3 +1,21 @@
 [submodule "backend"]
 	path = backend
 	url = https://github.com/kmu-aws-capstone-team-4/backend
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/kmu-aws-capstone-team-4/frontend
+[submodule "infra"]
+	path = infra
+	url = https://github.com/kmu-aws-capstone-team-4/infra
+[submodule "interview-analysis-report"]
+	path = interview-analysis-report
+	url = https://github.com/kmu-aws-capstone-team-4/interview-analysis-report
+[submodule "analysis-resume"]
+	path = analysis-resume
+	url = https://github.com/kmu-aws-capstone-team-4/analysis-resume
+[submodule "scraping"]
+	path = scraping
+	url = https://github.com/kmu-aws-capstone-team-4/scraping
+[submodule "voice-api"]
+	path = voice-api
+	url = https://github.com/kmu-aws-capstone-team-4/voice-api
