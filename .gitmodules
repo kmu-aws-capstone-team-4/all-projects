@@ -19,3 +19,6 @@
 [submodule "voice-api"]
 	path = voice-api
 	url = https://github.com/kmu-aws-capstone-team-4/voice-api
+[submodule "mefit-tools"]
+	path = mefit-tools
+	url = https://github.com/kmu-aws-capstone-team-4/mefit-tools
