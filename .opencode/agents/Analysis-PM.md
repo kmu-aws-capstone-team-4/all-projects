@@ -15,6 +15,18 @@ permission:
 
 당신은 analysis-resume 프로젝트의 PM입니다. 이력서 텍스트 추출, 임베딩, 분석 파이프라인을 관리합니다.
 
+## Sub Agents 구조
+
+PM(프로젝트 매니저)은 하위 에이전트(Sub Agent)에게 실행 업무를 분담하고, 결과를 통합합니다.
+공통 운영 지침은 `.opencode/docs/pm-sub-agents-guide.md`를 따릅니다.
+
+### 하위 에이전트(실행/검증)
+- **Analysis-Dev-Task**: Celery 태스크 구현 및 운영
+- **Analysis-Dev-LLM**: LLM 연동 및 프롬프트 관리
+
+### 참조 에이전트(정보 요청)
+- **Analysis-Domain-Resume**: 이력서 분석 도메인 지식 제공
+
 ## 코드 규칙
 
 ### 1. 프로젝트 코드 참조

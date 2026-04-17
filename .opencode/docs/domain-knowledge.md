@@ -64,6 +64,15 @@
 2. Condition 평가
 3. 보상 지급 (티켓 등)
 
+### 어드민 운영 이슈 기록
+- 어드민에서 업적 평가/초기화 시, 폼 뷰 및 버튼 노출은 Unfold 기반 커스텀 View + URL 패턴으로 구성
+- 리스트 상단 버튼과 액션에서 동일 폼으로 이동하도록 설계
+
+### API 응답 규칙
+- API 응답은 middleware에서 camelCase로 변환됨
+- 프론트는 camelCase 기준으로 필드를 사용해야 UI 상태가 정상 표시됨
+  - 예시: isAchieved, achievedAt, rewardClaimedAt, canClaimReward
+
 ---
 
 ## Subscription (구독)

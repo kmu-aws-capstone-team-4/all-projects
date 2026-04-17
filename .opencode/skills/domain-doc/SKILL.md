@@ -41,3 +41,7 @@ compatibility: opencode
 ### API
 ### 상태
 ```
+
+## 운영 이슈 기록 가이드
+- 어드민 작업 이슈(폼/버튼/뷰 구성)는 해당 도메인 섹션에 별도 기록
+- API 응답 규칙(예: camelCase 변환)은 API 하위에 명시

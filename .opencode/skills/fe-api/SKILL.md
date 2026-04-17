@@ -22,3 +22,8 @@ export async function getUser(id: number): Promise<User> {
 - [ ] async/await
 - [ ] 타입 정의
 - [ ] export 문
+
+## 응답 케이스 유의사항
+- API 응답은 middleware를 통해 camelCase로 변환되어 반환됨
+- 프론트 타입/필드는 camelCase 기준으로 정의 (예: canClaimReward, rewardClaimedAt)
+- 백엔드 serializer가 snake_case여도 프론트는 camelCase를 사용
