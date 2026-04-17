@@ -5,11 +5,11 @@
 - PM Sub Agents 운영 가이드 신설
 
 ## 적용 위치
-- .opencode/agents/BE-PM.md
-- .opencode/agents/FE-PM.md
-- .opencode/agents/Analysis-PM.md
-- .opencode/agents/Scraping-PM.md
-- .opencode/agents/Voice-PM.md
-- .opencode/agents/Infra-PM.md
-- .opencode/agents/Report-PM.md
+- .opencode/agents/be-pm.md
+- .opencode/agents/fe-pm.md
+- .opencode/agents/analysis-pm.md
+- .opencode/agents/scraping-pm.md
+- .opencode/agents/voice-pm.md
+- .opencode/agents/infra-pm.md
+- .opencode/agents/report-pm.md
 - .opencode/docs/pm-sub-agents-guide.md

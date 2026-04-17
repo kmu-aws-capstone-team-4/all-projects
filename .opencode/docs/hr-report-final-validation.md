@@ -44,51 +44,51 @@
 
 | Agent | skill 선언 | 상태 |
 |-------|-----------|------|
-| BE-Domain-Resume | be-domain, domain-doc | ✅ |
-| BE-Domain-Profile | be-domain, domain-doc | ✅ |
-| BE-Domain-Ticket | be-domain, domain-doc | ✅ |
-| BE-Domain-Achievement | be-domain, domain-doc | ✅ |
-| BE-Domain-JobDescription | be-domain, domain-doc | ✅ |
-| BE-Domain-Subscription | be-domain, domain-doc | ✅ |
+| be-domain-resume | be-domain, domain-doc | ✅ |
+| be-domain-profile | be-domain, domain-doc | ✅ |
+| be-domain-ticket | be-domain, domain-doc | ✅ |
+| be-domain-achievement | be-domain, domain-doc | ✅ |
+| be-domain-jobdescription | be-domain, domain-doc | ✅ |
+| be-domain-subscription | be-domain, domain-doc | ✅ |
 
 ### 2.2 Analysis Agents (3개)
 
 | Agent | skill 선언 | 상태 |
 |-------|-----------|------|
-| Analysis-Dev-Task | analysis-task | ✅ |
-| Analysis-Resume-LLM-Developer | analysis-task | ✅ |
-| Analysis-Domain-Resume | analysis-task, domain-doc | ✅ |
+| analysis-dev-task | analysis-task | ✅ |
+| analysis-resume-llm-developer | analysis-task | ✅ |
+| analysis-domain-resume | analysis-task, domain-doc | ✅ |
 
 ### 2.3 Scraping Agents (3개)
 
 | Agent | skill 선언 | 상태 |
 |-------|-----------|------|
-| Scraping-Dev-Scraper | scraping-pipeline | ✅ |
-| Scraping-Dev-Pipeline | scraping-pipeline | ✅ |
-| Scraping-Domain-JobPosting | scraping-pipeline, domain-doc | ✅ |
+| scraping-dev-scraper | scraping-pipeline | ✅ |
+| scraping-dev-pipeline | scraping-pipeline | ✅ |
+| scraping-domain-jobposting | scraping-pipeline, domain-doc | ✅ |
 
 ### 2.4 Voice Agents (4개)
 
 | Agent | skill 선언 | 상태 |
 |-------|-----------|------|
-| Voice-Dev-API | voice-api | ✅ |
-| Voice-Dev-Service | voice-api | ✅ |
-| Voice-Domain-TTS | voice-api, domain-doc | ✅ |
-| Voice-Domain-STT | voice-api, domain-doc | ✅ |
+| voice-dev-api | voice-api | ✅ |
+| voice-dev-service | voice-api | ✅ |
+| voice-domain-tts | voice-api, domain-doc | ✅ |
+| voice-domain-stt | voice-api, domain-doc | ✅ |
 
 ### 2.5 Report Agents (1개)
 
 | Agent | skill 선언 | 상태 |
 |-------|-----------|------|
-| Report-Dev-Task | analysis-task | ✅ |
+| report-dev-task | analysis-task | ✅ |
 
 ### 2.6 Infra Agents (3개)
 
 | Agent | skill 선언 | 상태 |
 |-------|-----------|------|
-| Infra-Dev-Deploy | infra-deploy | ✅ |
-| Infra-Dev-Script | infra-script | ✅ |
-| Infra-Domain-K8s | infra-deploy, domain-doc | ✅ |
+| infra-dev-deploy | infra-deploy | ✅ |
+| infra-dev-script | infra-script | ✅ |
+| infra-domain-k8s | infra-deploy, domain-doc | ✅ |
 
 **소계**: 20개 Agent skill 명시화 완료 ✅
 
@@ -107,12 +107,12 @@
 
 | Agent | 내용 | 상태 |
 |-------|------|------|
-| BE-Modeler | "당신은 Django 모델러입니다..." | ✅ |
-| Analysis-Dev-Task | "당신은 analysis-resume의 Celery 태스크 개발자입니다..." | ✅ |
-| Infra-Dev-Deploy | "당신은 infra의 배포 개발자입니다..." | ✅ |
-| Analysis-Domain-Resume | "당신은 analysis-resume 프로젝트 도메인 전문가입니다..." | ✅ |
-| Scraping-Dev-Scraper | "당신은 scraping 프로젝트의 스크래퍼 개발자입니다..." | ✅ |
-| Voice-Dev-API | "당신은 voice-api의 API 개발자입니다..." | ✅ |
+| be-modeler | "당신은 Django 모델러입니다..." | ✅ |
+| analysis-dev-task | "당신은 analysis-resume의 Celery 태스크 개발자입니다..." | ✅ |
+| infra-dev-deploy | "당신은 infra의 배포 개발자입니다..." | ✅ |
+| analysis-domain-resume | "당신은 analysis-resume 프로젝트 도메인 전문가입니다..." | ✅ |
+| scraping-dev-scraper | "당신은 scraping 프로젝트의 스크래퍼 개발자입니다..." | ✅ |
+| voice-dev-api | "당신은 voice-api의 API 개발자입니다..." | ✅ |
 
 **영어 탐지 결과**: 없음 (grep "you are a|^You are a" → 0개 발견)
 
@@ -170,7 +170,7 @@
 - ✅ fe-domain Skill 생성
 - ✅ infra-deploy Skill 생성
 - ✅ infra-script Skill 생성
-- ✅ BE-Modeler skill 수정
+- ✅ be-modeler skill 수정
 - ✅ BE-Domain-* 6개 Agent skill 수정
 
 ### 2. Dev/Domain Agents Skill 명시화 (20개 Agent)
