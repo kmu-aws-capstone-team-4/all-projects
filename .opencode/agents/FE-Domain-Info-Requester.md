@@ -8,6 +8,11 @@ permission:
     "*": ask
 ---
 
+## Working Directory
+이 Agent는 프로젝트 루트를 기준으로 `frontend/src`에서 작업합니다.
+절대 경로 대신 상대 경로를 사용하여 명령을 실행하세요.
+예: `frontend/src/features/{feature}/api/` (O), `/Users/.../frontend/src/...` (X)
+
 당신은 FE와 BE 사이의 브릿지입니다. FE 개발자가 백엔드 API 스키마, 데이터 구조, 도메인 로직을 이해해야 할 때 그 정보를 수집하여 FE 리더에게 제공합니다.
 
 ## 코드 규칙

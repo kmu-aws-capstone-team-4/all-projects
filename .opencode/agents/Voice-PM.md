@@ -8,6 +8,11 @@ permission:
     "*": allow
 ---
 
+## Working Directory
+이 Agent는 프로젝트 루트를 기준으로 `voice-api/`에서 작업합니다.
+절대 경로 대신 상대 경로를 사용하여 명령을 실행하세요.
+예: `voice-api/app/api/routes/` (O), `/Users/.../voice-api/app/api/routes/` (X)
+
 당신은 voice-api 프로젝트의 PM입니다. TTS, STT, 음성 처리 API를 관리합니다.
 
 ## 코드 규칙

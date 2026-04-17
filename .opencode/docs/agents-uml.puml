@@ -1,0 +1,171 @@
+@startuml
+title Agent 구조 요약 UML
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+left to right direction
+
+package "Cross Project" {
+  component "CEO\n전체 프로젝트 총괄" as CEO
+  component "CTO\n기술 점검/검증" as CTO
+  component "Product-Lead\n기능 기획/조율" as PRODUCT_LEAD
+  component "HR-Manager\n언어/구조/위협 점검" as HR_MANAGER
+  component "QA-Engineer\n품질 검증" as QA_ENGINEER
+  component "MefitTools-Manager\n도구 운영 안정화" as MEFITTOOLS_MANAGER
+}
+
+package "Backend" {
+  component "BE-PM\n백엔드 PM" as BE_PM
+  component "BE-Modeler\n모델/마이그레이션" as BE_MODELER
+  component "BE-Service\n서비스 로직" as BE_SERVICE
+  component "BE-API\nDRF API" as BE_API
+  component "BE-Task\nCelery 태스크" as BE_TASK
+  component "BE-Realtime\n실시간 통신" as BE_REALTIME
+  component "BE-Tester\n백엔드 테스트" as BE_TESTER
+  component "BE-Domain-Interview" as BE_DOMAIN_INTERVIEW
+  component "BE-Domain-Resume" as BE_DOMAIN_RESUME
+  component "BE-Domain-Ticket" as BE_DOMAIN_TICKET
+  component "BE-Domain-Achievement" as BE_DOMAIN_ACHIEVEMENT
+  component "BE-Domain-Profile" as BE_DOMAIN_PROFILE
+  component "BE-Domain-Subscription" as BE_DOMAIN_SUBSCRIPTION
+  component "BE-Domain-JobDescription" as BE_DOMAIN_JOBDESCRIPTION
+  component "BE-Domain-Knowledge-Manager" as BE_DOMAIN_KM
+}
+
+package "Frontend" {
+  component "FE-PM\n프론트엔드 PM" as FE_PM
+  component "FE-Component\nUI 컴포넌트" as FE_COMPONENT
+  component "FE-API\n프론트 API" as FE_API
+  component "FE-Store\n상태 관리" as FE_STORE
+  component "FE-Tester\n프론트 테스트" as FE_TESTER
+  component "FE-Domain-Interview" as FE_DOMAIN_INTERVIEW
+  component "FE-Domain-Info-Requester\n백엔드 스키마 요청" as FE_DOMAIN_INFO_REQUESTER
+}
+
+package "Analysis Resume" {
+  component "Analysis-PM\n분석 PM" as ANALYSIS_PM
+  component "Analysis-Dev-Task\n분석 태스크" as ANALYSIS_DEV_TASK
+  component "Analysis-Resume-LLM-Developer\nLLM 분석" as ANALYSIS_LLM_DEV
+  component "Analysis-Domain-Resume\n이력서 도메인" as ANALYSIS_DOMAIN_RESUME
+}
+
+package "Scraping" {
+  component "Scraping-PM\n스크래핑 PM" as SCRAPING_PM
+  component "Scraping-Dev-Scraper\n스크래퍼" as SCRAPING_DEV_SCRAPER
+  component "Scraping-Dev-Pipeline\n파이프라인" as SCRAPING_DEV_PIPELINE
+  component "Scraping-Domain-JobPosting\n채용공고 도메인" as SCRAPING_DOMAIN_JOBPOSTING
+}
+
+package "Voice API" {
+  component "Voice-PM\n음성 PM" as VOICE_PM
+  component "Voice-Dev-API\n음성 API" as VOICE_DEV_API
+  component "Voice-Dev-Service\nTTS/STT 서비스" as VOICE_DEV_SERVICE
+  component "Voice-Domain-TTS\nTTS 도메인" as VOICE_DOMAIN_TTS
+  component "Voice-Domain-STT\nSTT 도메인" as VOICE_DOMAIN_STT
+}
+
+package "Interview Analysis Report" {
+  component "Report-PM\n리포트 PM" as REPORT_PM
+  component "Report-Dev-Task\n리포트 태스크" as REPORT_DEV_TASK
+}
+
+package "Infra" {
+  component "Infra-PM\n인프라 PM" as INFRA_PM
+  component "Infra-Dev-Deploy\n배포" as INFRA_DEV_DEPLOY
+  component "Infra-Dev-Script\n스크립트" as INFRA_DEV_SCRIPT
+  component "Infra-Domain-K8s\nK8s 도메인" as INFRA_DOMAIN_K8S
+}
+
+' 최상위 조율 관계
+CEO --> PRODUCT_LEAD : 전략/우선순위
+CEO --> CTO : 기술 검토 요청
+CEO --> HR_MANAGER : 점검 요청
+CEO --> BE_PM : 지시
+CEO --> FE_PM : 지시
+CEO --> ANALYSIS_PM : 지시
+CEO --> SCRAPING_PM : 지시
+CEO --> VOICE_PM : 지시
+CEO --> REPORT_PM : 지시
+CEO --> INFRA_PM : 지시
+
+' Product/HR/QA 관계
+PRODUCT_LEAD --> BE_PM : 요구사항
+PRODUCT_LEAD --> FE_PM : 요구사항
+PRODUCT_LEAD --> ANALYSIS_PM : 요구사항
+PRODUCT_LEAD --> SCRAPING_PM : 요구사항
+PRODUCT_LEAD --> VOICE_PM : 요구사항
+PRODUCT_LEAD --> REPORT_PM : 요구사항
+PRODUCT_LEAD --> BE_DOMAIN_KM : 지식 관리
+
+HR_MANAGER --> BE_PM : 점검
+HR_MANAGER --> FE_PM : 점검
+HR_MANAGER --> INFRA_PM : 점검
+HR_MANAGER --> BE_DOMAIN_KM : 점검
+CTO --> QA_ENGINEER : 검증 지시
+
+' Backend 내부
+BE_PM --> BE_MODELER : 할당
+BE_PM --> BE_SERVICE : 할당
+BE_PM --> BE_API : 할당
+BE_PM --> BE_TASK : 할당
+BE_PM --> BE_REALTIME : 실시간 태스크
+BE_PM --> BE_TESTER : 할당
+BE_PM --> BE_DOMAIN_INTERVIEW : 도메인 지식
+BE_PM --> BE_DOMAIN_RESUME : 도메인 지식
+BE_PM --> BE_DOMAIN_TICKET : 도메인 지식
+BE_PM --> BE_DOMAIN_ACHIEVEMENT : 도메인 지식
+BE_PM --> BE_DOMAIN_PROFILE : 도메인 지식
+BE_PM --> BE_DOMAIN_SUBSCRIPTION : 도메인 지식
+
+BE_MODELER --> BE_SERVICE : 모델 제공
+BE_MODELER --> BE_API : 직렬화 협의
+BE_MODELER --> INFRA_DEV_DEPLOY : 마이그레이션 배포
+BE_SERVICE --> BE_API : 서비스 제공
+BE_SERVICE --> BE_TASK : async 호출
+FE_DOMAIN_INFO_REQUESTER ..> BE_API : API 스키마 요청
+FE_TESTER ..> BE_API : 통합 검증
+BE_TESTER --> BE_DOMAIN_KM : 문서 업데이트
+
+' Frontend 내부
+FE_PM --> FE_COMPONENT : 할당
+FE_PM --> FE_API : 할당
+FE_PM --> FE_STORE : 할당
+FE_PM --> FE_TESTER : 할당
+FE_PM --> FE_DOMAIN_INFO_REQUESTER : 할당
+FE_PM --> FE_DOMAIN_INTERVIEW : 도메인 지식
+
+FE_COMPONENT --> FE_API : 함수 제공
+FE_COMPONENT --> FE_STORE : 상태 제공
+FE_API --> FE_STORE : 상태 제공
+FE_DOMAIN_INFO_REQUESTER --> BE_DOMAIN_INTERVIEW : 도메인 정보 요청
+FE_DOMAIN_INFO_REQUESTER --> BE_DOMAIN_RESUME : 도메인 정보 요청
+
+' Analysis/Scraping/Voice/Report/Infra 내부
+ANALYSIS_PM --> ANALYSIS_DOMAIN_RESUME : 도메인 조회
+ANALYSIS_PM --> ANALYSIS_DEV_TASK : 할당
+ANALYSIS_PM --> ANALYSIS_LLM_DEV : 할당
+ANALYSIS_PM --> INFRA_PM : 배포 요청
+
+SCRAPING_PM --> SCRAPING_DOMAIN_JOBPOSTING : 도메인 조회
+SCRAPING_PM --> SCRAPING_DEV_SCRAPER : 할당
+SCRAPING_PM --> SCRAPING_DEV_PIPELINE : 할당
+SCRAPING_PM --> INFRA_DEV_DEPLOY : 배포 요청
+SCRAPING_PM --> BE_DOMAIN_JOBDESCRIPTION : 도메인 조회
+
+VOICE_PM --> VOICE_DOMAIN_TTS : 도메인 조회
+VOICE_PM --> VOICE_DOMAIN_STT : 도메인 조회
+VOICE_PM --> VOICE_DEV_API : 할당
+VOICE_PM --> VOICE_DEV_SERVICE : 할당
+VOICE_PM --> INFRA_PM : 배포 요청
+
+REPORT_PM --> REPORT_DEV_TASK : 할당
+
+INFRA_PM --> INFRA_DOMAIN_K8S : 도메인 조회
+INFRA_PM --> INFRA_DEV_DEPLOY : 할당
+INFRA_PM --> INFRA_DEV_SCRIPT : 할당
+
+MEFITTOOLS_MANAGER --> INFRA_PM : 운영
+MEFITTOOLS_MANAGER --> INFRA_DEV_DEPLOY : 운영
+MEFITTOOLS_MANAGER --> INFRA_DEV_SCRIPT : 운영
+MEFITTOOLS_MANAGER --> INFRA_DOMAIN_K8S : 운영
+
+@enduml

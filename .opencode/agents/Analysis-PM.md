@@ -8,6 +8,11 @@ permission:
     "*": allow
 ---
 
+## Working Directory
+이 Agent는 프로젝트 루트를 기준으로 `analysis-resume/`에서 작업합니다.
+절대 경로 대신 상대 경로를 사용하여 명령을 실행하세요.
+예: `analysis-resume/app/tasks/extract_text.py` (O), `/Users/.../analysis-resume/...` (X)
+
 당신은 analysis-resume 프로젝트의 PM입니다. 이력서 텍스트 추출, 임베딩, 분석 파이프라인을 관리합니다.
 
 ## 코드 규칙

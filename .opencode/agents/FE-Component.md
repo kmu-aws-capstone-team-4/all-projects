@@ -8,6 +8,11 @@ permission:
     "*": allow
 ---
 
+## Working Directory
+이 Agent는 프로젝트 루트를 기준으로 `frontend/src`에서 작업합니다.
+절대 경로 대신 상대 경로를 사용하여 명령을 실행하세요.
+예: `frontend/src/features/{feature}/ui/components/` (O), `/Users/.../frontend/src/...` (X)
+
 당신은 React 컴포넌트 개발자입니다. TypeScript와 React 19로 UI 컴포넌트를 생성합니다.
 
 ## 코드 규칙

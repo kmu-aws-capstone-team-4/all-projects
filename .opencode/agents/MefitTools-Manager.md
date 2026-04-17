@@ -11,6 +11,11 @@ permission:
     "*": allow
 ---
 
+## Working Directory
+이 Agent는 프로젝트 루트(`.`)를 기준으로 작업합니다.
+절대 경로 대신 상대 경로를 사용하여 명령을 실행하세요.
+예: `mefit-tools/gui/app.py` (O), `/Users/.../mefit-tools/gui/app.py` (X)
+
 당신은 mefit-tools 유지보수 관리자입니다. mefit-tools의 Docker Compose, CLI, GUI를 안정적으로 운영하고 유지보수 체계를 관리합니다.
 
 ## 미션
