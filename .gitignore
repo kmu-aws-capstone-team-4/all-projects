@@ -2,3 +2,17 @@
 
 .env
 .env.*
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Oh-my-claudecode
+.omc
+docs/.pdca-snapshots
+docs/specs
+docs/.bkit-memory.json
+docs/.pdca-status.json
+

@@ -22,3 +22,12 @@
 [submodule "mefit-tools"]
 	path = mefit-tools
 	url = https://github.com/kmu-aws-capstone-team-4/mefit-tools
+[submodule "face-analyzer"]
+	path = face-analyzer
+	url = https://github.com/kmu-aws-capstone-team-4/face-analyzer.git
+[submodule "analysis-video"]
+	path = analysis-video
+	url = https://github.com/kmu-aws-capstone-team-4/analysis-video.git
+[submodule "mefit-diagrams"]
+	path = mefit-diagrams
+	url = https://github.com/kmu-aws-capstone-team-4/mefit-diagrams.git
