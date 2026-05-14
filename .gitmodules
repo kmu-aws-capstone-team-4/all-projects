@@ -31,3 +31,6 @@
 [submodule "mefit-diagrams"]
 	path = mefit-diagrams
 	url = https://github.com/kmu-aws-capstone-team-4/mefit-diagrams.git
+[submodule "analysis-stt"]
+	path = analysis-stt
+	url = https://github.com/kmu-aws-capstone-team-4/analysis-stt.git
