@@ -34,3 +34,6 @@
 [submodule "analysis-stt"]
 	path = analysis-stt
 	url = https://github.com/kmu-aws-capstone-team-4/analysis-stt.git
+[submodule "booth-rag"]
+	path = booth-rag
+	url = https://github.com/kmu-aws-capstone-team-4/booth-rag
